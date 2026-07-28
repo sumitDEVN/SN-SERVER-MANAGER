@@ -1,42 +1,28 @@
 #!/bin/bash
 
-get_hostname() {
-    hostname
+source lib/color.sh
+
+
+system_info(){
+
+echo "=============================="
+echo " SYSTEM INFORMATION"
+echo "=============================="
+
+echo "Hostname : $(hostname)"
+echo "IP       : $(hostname -I)"
+echo "Date     : $(date)"
+
+echo "=============================="
+
 }
 
-get_os() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        echo "$PRETTY_NAME"
-    else
-        uname -o
-    fi
-}
 
-get_kernel() {
-    uname -r
-}
 
-get_arch() {
-    uname -m
-}
+restart_ssh(){
 
-get_uptime() {
-    uptime -p
-}
+systemctl restart ssh
 
-get_datetime() {
-    date "+%d-%m-%Y %I:%M:%S %p"
-}
+success "SSH restarted"
 
-get_ram() {
-    free -h | awk '/Mem:/ {print $3 " / " $2}'
-}
-
-get_disk() {
-    df -h / | awk 'NR==2 {print $3 " / " $2 " (" $5 ")"}'
-}
-
-get_cpu_load() {
-    awk '{print $1}' /proc/loadavg
 }
