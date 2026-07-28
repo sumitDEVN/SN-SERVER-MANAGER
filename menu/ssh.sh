@@ -42,8 +42,7 @@ pause
 ;;
 
 4)
-echo "User List (Coming Soon)"
-pause
+list_ssh_users
 ;;
 
 5)
