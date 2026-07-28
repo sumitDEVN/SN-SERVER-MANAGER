@@ -33,8 +33,7 @@ Create SSH User
 ;;
 
 2)
-echo "Delete SSH User (Coming Soon)"
-pause
+delete_ssh_user
 ;;
 
 3)
