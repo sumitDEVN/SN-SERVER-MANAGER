@@ -69,6 +69,8 @@ do
         break
     fi
 done
+create_date=$(get_today)
+expiry_date=$(get_expiry "$days")
 
 clear
 banner
