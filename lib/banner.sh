@@ -1,18 +1,18 @@
 #!/bin/bash
 
-source config/config.sh
-
-banner(){
+banner() {
 
 clear
 
-echo -e "${CYAN}"
-echo "╔════════════════════════════════════════════╗"
-echo "║            ${APP_NAME}"
-echo "║            Version ${APP_VERSION}"
-echo "╚════════════════════════════════════════════╝"
-echo -e "${WHITE}Developer : ${DEVELOPER}"
-echo "────────────────────────────────────────────"
+echo -e "${BCYAN}"
+echo "=================================================="
+echo "              SN SERVER MANAGER"
+echo "                  v0.5 Alpha"
+echo "=================================================="
 echo -e "${NC}"
+
+echo -e "${BWHITE}Developer :${NC} Sumit Nath"
+echo -e "${BWHITE}Status    :${BGREEN} Development${NC}"
+echo
 
 }
