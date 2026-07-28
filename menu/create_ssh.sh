@@ -54,7 +54,15 @@ echo "Password   : ********"
 echo "Valid Days : $days"
 echo "--------------------------------------"
 
-echo "{ \"username\":\"$username\", \"days\":\"$days\" }" >> database/users.json
+if user_exists "$username"; then
+
+    error "Username already exists!"
+    pause
+    return
+
+fi
+
+save_demo_user "$username" "$days"
 success "Demo user created successfully."
 
 pause
