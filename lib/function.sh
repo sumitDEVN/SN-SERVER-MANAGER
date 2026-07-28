@@ -1,35 +1,37 @@
 #!/bin/bash
 
-pause(){
+pause() {
 
 echo
 read -p "Press Enter to continue..."
 
 }
 
-success(){
+success() {
 
 echo -e "${GREEN}$1${NC}"
 
 }
 
-error(){
+error() {
 
 echo -e "${RED}$1${NC}"
 
 }
 
-line(){
+line() {
 
 echo "────────────────────────────────────────────"
 
 }
 
-title(){
+title() {
 
 line
 echo "$1"
 line
+
+}
 
 loading() {
 
@@ -43,5 +45,4 @@ done
 
 echo
 
-}
 }
