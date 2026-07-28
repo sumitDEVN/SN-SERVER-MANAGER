@@ -27,8 +27,7 @@ read -p "Select Menu : " sshmenu
 case $sshmenu in
 
 1)
-echo "Create SSH User (Coming Soon)"
-pause
+Create SSH User
 ;;
 
 2)
