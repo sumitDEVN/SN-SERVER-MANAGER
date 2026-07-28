@@ -12,11 +12,8 @@ source lib/password.sh
 source lib/expiry.sh
 
 init_database
-banner
-title "SERVER INFORMATION"
 
 banner
-
 dashboard
 
 echo
