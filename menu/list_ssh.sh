@@ -4,10 +4,10 @@ list_ssh_users(){
 
 banner
 
-echo "=========== SSH USER LIST ==========="
+title "SSH USER LIST"
 
-echo
-echo "No users found."
+cat database/users.json
+
 echo
 
 pause
