@@ -54,6 +54,7 @@ echo "Password   : ********"
 echo "Valid Days : $days"
 echo "--------------------------------------"
 
+echo "{ \"username\":\"$username\", \"days\":\"$days\" }" >> database/users.json
 success "Demo user created successfully."
 
 pause
