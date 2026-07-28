@@ -13,8 +13,7 @@ source lib/database.sh
 source lib/user.sh
 source lib/password.sh
 source lib/expiry.sh
-
-source menu/ssh.sh
+source lib/ssh.sh
 
 init_database
 
