@@ -23,7 +23,32 @@ done
 # Password
 while true
 do
+    echo
+echo "1. Enter Password"
+echo "2. Generate Random Password"
+
+read -p "Choose : " pass_option
+
+case $pass_option in
+
+1)
     read -s -p "Password : " password
+    echo
+    ;;
+
+2)
+    password=$(generate_password)
+    echo
+    success "Generated Password : $password"
+    ;;
+
+*)
+    error "Invalid Option"
+    pause
+    return
+    ;;
+
+esac
     echo
 
     if [[ ${#password} -lt 6 ]]; then
