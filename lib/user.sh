@@ -1,39 +1,102 @@
 #!/bin/bash
 
-create_user() {
+source config.sh
+source lib/color.sh
 
-    local username="$1"
-    local password="$2"
-    local days="$3"
-    local type="$4"
-    
-    echo
-echo "User Summary"
-line
-echo "Username : $username"
-echo "Type     : $type"
-echo "Created  : $create_date"
-echo "Expire   : $expiry_date"
-line
 
-    save_demo_user "$username" "$days"
+create_user(){
 
+    read -p "Enter username: " username
+
+    if id "$username" &>/dev/null; then
+        error "User already exists!"
+        return
+    fi
+
+
+    read -p "Enter password: " password
+
+
+    read -p "Expiry days: " days
+
+
+    expiry=$(date -d "+$days days" +"%Y-%m-%d")
+
+
+    useradd -m -s /bin/bash "$username"
+
+
+    echo "$username:$password" | chpasswd
+
+
+    echo "$username|$expiry" >> "$USER_DB"
+
+
+    success "User $username created successfully"
+    info "Expiry Date: $expiry"
 }
 
-delete_user() {
 
-    echo "Delete User (Coming Soon)"
 
+delete_user(){
+
+    read -p "Enter username: " username
+
+
+    if id "$username" &>/dev/null
+    then
+
+        userdel -r "$username"
+
+        sed -i "/^$username|/d" "$USER_DB"
+
+        success "User deleted"
+
+    else
+
+        error "User not found"
+
+    fi
 }
 
-renew_user() {
 
-    echo "Renew User (Coming Soon)"
 
+list_users(){
+
+    echo "========================"
+    echo " SSH USERS"
+    echo "========================"
+
+
+    if [ -f "$USER_DB" ]
+    then
+        cat "$USER_DB"
+    else
+        warning "No users found"
+    fi
 }
 
-list_users() {
 
-    cat database/users.json
+
+check_expiry(){
+
+    today=$(date +"%Y-%m-%d")
+
+
+    while IFS="|" read -r user expiry
+    do
+
+        if [ "$expiry" \< "$today" ]
+        then
+
+            userdel -r "$user" 2>/dev/null
+
+            sed -i "/^$user|/d" "$USER_DB"
+
+            warning "$user expired and removed"
+
+        fi
+
+    done < "$USER_DB"
 
 }
