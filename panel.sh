@@ -3,13 +3,15 @@
 source lib/color.sh
 source lib/banner.sh
 source lib/function.sh
-source menu/ssh.sh
+
 source lib/database.sh
 source lib/user.sh
 source lib/system.sh
 source lib/dashboard.sh
 source lib/password.sh
 source lib/expiry.sh
+
+source menu/ssh.sh
 
 init_database
 
@@ -32,17 +34,13 @@ echo
 read -p "Select Menu : " menu
 
 case $menu in
-
-1)
-ssh_menu
-;;
-
-0)
-exit
-;;
-
-*)
-error "Invalid Menu"
-;;
-
+    1)
+        ssh_menu
+        ;;
+    0)
+        exit
+        ;;
+    *)
+        error "Invalid Menu"
+        ;;
 esac
