@@ -14,6 +14,8 @@ source lib/user.sh
 source lib/password.sh
 source lib/expiry.sh
 source lib/ssh.sh
+source config/config.conf
+source lib/logger.sh
 
 init_database
 
