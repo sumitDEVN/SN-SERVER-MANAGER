@@ -1,4 +1,5 @@
 #!/bin/bash
+source lib/user.sh
 
 create_ssh_user() {
 
@@ -62,7 +63,7 @@ if user_exists "$username"; then
 
 fi
 
-save_demo_user "$username" "$days"
+create_user "$username" "$password" "$days" "ssh"
 success "Demo user created successfully."
 
 pause
