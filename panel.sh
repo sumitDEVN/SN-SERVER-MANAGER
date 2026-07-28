@@ -10,6 +10,16 @@ source lib/system.sh
 
 init_database
 banner
+title "SERVER INFORMATION"
+
+echo "Hostname : $(get_hostname)"
+echo "OS       : $(get_os)"
+echo "Kernel   : $(get_kernel)"
+echo "Arch     : $(get_arch)"
+echo "Uptime   : $(get_uptime)"
+echo "Time     : $(get_datetime)"
+
+echo
 title "MAIN MENU"
 
 echo -e "${GREEN}[1] SSH Manager${NC}"
