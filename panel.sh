@@ -17,3 +17,19 @@ echo -e "${RED}[0] Exit${NC}"
 echo
 
 read -p "Select Menu : " menu
+
+case $menu in
+
+1)
+ssh_menu
+;;
+
+0)
+exit
+;;
+
+*)
+error "Invalid Menu"
+;;
+
+esac
