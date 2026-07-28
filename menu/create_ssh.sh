@@ -80,6 +80,8 @@ echo "--------------------------------------"
 echo "Username   : $username"
 echo "Password   : ********"
 echo "Valid Days : $days"
+echo "Created    : $create_date"
+echo "Expires    : $expiry_date"
 echo "--------------------------------------"
 
 if user_exists "$username"; then
