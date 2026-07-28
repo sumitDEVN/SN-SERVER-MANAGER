@@ -6,6 +6,7 @@ source lib/function.sh
 source menu/ssh.sh
 source lib/database.sh
 source lib/user.sh
+source lib/system.sh
 
 init_database
 banner
