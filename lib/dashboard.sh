@@ -4,28 +4,14 @@ dashboard() {
 
 title "SERVER STATUS"
 
-echo "🟢 Status   : Online"
-echo "👤 User     : $(whoami)"
-echo "💻 Hostname : $(hostname)"
-echo "🕒 Time     : $(date '+%d-%m-%Y %H:%M:%S')"
-
-echo
-title "RESOURCE"
-
-echo "🧠 RAM"
-
-free -h | awk '/Mem:/ {print "   Used : "$3" / "$2}'
-
-echo
-
-echo "💾 Disk"
-
-df -h / | awk 'NR==2 {print "   Used : "$3" / "$2" ("$5")"}'
-
-echo
-
-echo "⏱ Uptime"
-
-uptime -p
+echo -e "${BCYAN}Hostname  :${NC} $(get_hostname)"
+echo -e "${BCYAN}OS        :${NC} $(get_os)"
+echo -e "${BCYAN}Kernel    :${NC} $(get_kernel)"
+echo -e "${BCYAN}Arch      :${NC} $(get_arch)"
+echo -e "${BCYAN}Uptime    :${NC} $(get_uptime)"
+echo -e "${BCYAN}RAM       :${NC} $(get_ram)"
+echo -e "${BCYAN}Disk      :${NC} $(get_disk)"
+echo -e "${BCYAN}CPU Load  :${NC} $(get_cpu_load)"
+echo -e "${BCYAN}Date      :${NC} $(get_datetime)"
 
 }
