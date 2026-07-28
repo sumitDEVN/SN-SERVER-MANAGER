@@ -1,24 +1,13 @@
-#!/bin/bash
+#!#!/bin/bash
 
 source lib/color.sh
 source lib/banner.sh
 source lib/function.sh
-
-source lib/database.sh
-source lib/user.sh
 source lib/system.sh
 source lib/dashboard.sh
-source lib/password.sh
-source lib/expiry.sh
-
-source menu/ssh.sh
-
-init_database
 
 banner
 dashboard
-
-echo
 
 title "MAIN MENU"
 
