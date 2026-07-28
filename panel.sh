@@ -18,6 +18,7 @@ source config/config.conf
 source lib/logger.sh
 
 init_database
+log_info "SN SERVER MANAGER Started"
 
 while true
 do
