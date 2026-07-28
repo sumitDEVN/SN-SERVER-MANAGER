@@ -6,6 +6,7 @@ source lib/function.sh
 source menu/ssh.sh
 
 banner
+title "MAIN MENU"
 
 echo -e "${GREEN}[1] SSH Manager${NC}"
 echo -e "${GREEN}[2] VLESS Manager${NC}"
