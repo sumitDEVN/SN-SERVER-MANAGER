@@ -4,7 +4,9 @@ source lib/color.sh
 source lib/banner.sh
 source lib/function.sh
 source menu/ssh.sh
+source lib/database.sh
 
+db_exists
 banner
 title "MAIN MENU"
 
