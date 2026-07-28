@@ -6,7 +6,7 @@ source lib/function.sh
 source menu/ssh.sh
 source lib/database.sh
 
-db_exists
+init_database
 banner
 title "MAIN MENU"
 
