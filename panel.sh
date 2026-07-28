@@ -16,6 +16,7 @@ source lib/expiry.sh
 source lib/ssh.sh
 source config/config.conf
 source lib/logger.sh
+source lib/box.sh
 
 init_database
 log_info "SN SERVER MANAGER Started"
@@ -25,6 +26,8 @@ do
     clear
 
     banner
+    box "SN SERVER MANAGER v1.0 Stable"
+line
     dashboard
 
     title "MAIN MENU"
