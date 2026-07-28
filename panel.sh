@@ -5,7 +5,7 @@ source lib/banner.sh
 source lib/function.sh
 source menu/ssh.sh
 source lib/database.sh
-source lib/user.sh
+
 
 init_database
 banner
