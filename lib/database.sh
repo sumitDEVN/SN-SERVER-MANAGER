@@ -28,3 +28,7 @@ save_demo_user() {
     echo "days:$days" >> "$DB_FILE"
 
 }
+
+get_db_file() {
+    echo "$DB_FILE"
+}
